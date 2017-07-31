@@ -22,3 +22,43 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.filter-color {
+    color: white;
+    opacity: .6;
+}
+
+    .filter-color:hover {
+        color: lightgray;
+    }
+
+    .filter-color:focus {
+        color: white;
+    }
+
+
+.in-limbeau {
+    opacity: .6;
+    /*color: white !important;*/
+}
+/*.in-limbeau span {
+        color: white !important;
+    }*/
+
+.selected {
+    opacity: 1;
+}
+
+    /*.selected span {
+        color: green !important;
+    }*/
+
+.not-selected {
+    opacity: 1;
+    background-color: gray !important;
+    color: white !important;
+}
+
+    /*.not-selected span {
+        color: red !important;
+    }*/
