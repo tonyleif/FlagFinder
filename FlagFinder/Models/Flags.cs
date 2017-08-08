@@ -18,11 +18,11 @@ namespace FlagFinder.Models
             Add("Albania", "", true, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, "flag-of-Albania");
             Add("Algeria", "", true, false, false, true, false, false, false, true, false, false, false, true, false, true, false, false, false, false, "flag-of-Algeria");
             Add("Andorra", "", true, false, true, false, true, false, false, true, false, false, false, false, false, false, false, false, true, false, "flag-of-Andorra");
-            Add("Angola", "", true, false, true, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, "flag-of-Angola");
+            Add("Angola", "", true, false, true, false, false, false, false, false, true, false, false, true, false, false, false, false, false, true, "flag-of-Angola");
             Add("Antigua and Barbuda", "", true, false, true, false, true, false, false, true, true, false, true, false, true, false, false, false, false, false, "flag-of-Antigua");
             Add("Argentina", "", false, true, false, false, true, false, false, true, false, true, false, false, true, false, false, true, false, false, "flag-of-Argentina");
             Add("Armenia", "", true, true, false, false, true, false, false, false, false, false, false, false, false, false, false, true, false, false, "flag-of-Armenia");
-            Add("Australia", "", true, false, false, false, true, false, false, true, false, false, false, true, false, false, true, false, false, false, "flag-of-Australia");
+            Add("Australia", "", true, false, false, false, true, false, false, true, false, false, true, true, false, false, true, false, false, false, "flag-of-Australia");
             Add("Austria", "", true, false, false, false, false, false, false, true, false, false, false, false, false, false, true, true, false, false, "flag-of-Austria");
             Add("Azerbaijan", "", true, false, false, true, true, false, false, true, false, false, false, true, false, true, false, true, false, false, "flag-of-Azerbaijan");
             Add("Bahamas", "", false, false, true, false, true, false, false, false, true, false, true, false, false, false, false, true, false, false, "flag-of-Bahamas");
@@ -33,7 +33,7 @@ namespace FlagFinder.Models
             Add("Belgium", "", true, false, true, false, false, false, false, false, true, false, false, false, false, false, false, false, true, false, "flag-of-Belgium");
             Add("Belize", "", true, false, true, true, true, false, true, true, false, true, false, false, false, false, false, false, false, false, "flag-of-Belize");
             Add("Benin", "", true, false, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, true, "flag-of-Benin");
-            Add("Bhutan", "", false, true, true, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, "flag-of-Bhutan");
+            Add("Bhutan", "", false, true, true, false, false, false, false, true, false, false, true, false, false, false, false, false, false, false, "flag-of-Bhutan");
             Add("Bolivia", "", true, true, true, true, true, false, true, false, false, false, false, false, false, false, false, true, false, false, "flag-of-Bolivia");
             Add("Bosnia and Herzegovina", "Bosnia", false, false, true, false, true, false, false, true, false, false, true, true, false, false, false, false, false, false, "flag-of-Bosnia-Herzegovina");
             Add("Botswana", "", false, false, false, false, true, false, false, true, true, false, false, false, false, false, false, false, false, false, "flag-of-Botswana");
@@ -43,7 +43,7 @@ namespace FlagFinder.Models
             Add("Burkina Faso", "", true, false, true, true, false, false, false, false, false, false, false, true, false, false, false, false, false, true, "flag-of-Burkina-Faso");
             Add("Burundi", "", true, false, false, true, false, false, false, true, false, true, true, true, false, false, false, false, false, false, "flag-of-Burundi");
             Add("Cabo Verde", "", true, false, true, false, true, false, false, true, false, false, false, true, false, false, false, false, false, false, "flag-of-Cabo-Verde");
-            Add("Cambodia", "", true, false, false, false, true, false, false, true, false, false, false, false, false, false, false, false, false, false, "flag-of-Cambodia");
+            Add("Cambodia", "", true, false, false, false, true, false, false, true, false, false, false, false, false, false, false, true, false, false, "flag-of-Cambodia");
             Add("Cameroon", "", true, false, true, true, false, false, false, false, false, false, false, true, false, false, false, false, true, false, "flag-of-Cameroon");
             Add("Canada", "", true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, true, false, "flag-of-Canada");
             Add("Central African Republic", "CAR", true, false, true, true, true, false, false, true, false, false, false, true, false, false, false, false, false, false, "flag-of-Central-African-Republic");
@@ -127,7 +127,7 @@ namespace FlagFinder.Models
             Add("Mexico", "", true, true, true, true, true, false, true, true, false, false, false, false, false, false, false, false, true, false, "flag-of-Mexico");
             Add("Micronesia", "", false, false, false, false, true, false, false, true, false, false, false, true, false, false, false, false, false, false, "flag-of-Micronesia");
             Add("Moldova", "", true, false, true, true, true, false, true, false, false, false, false, false, false, false, false, false, true, false, "flag-of-Moldova");
-            Add("Monaco", "", true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, "flag-of-Monaco");
+            Add("Monaco", "", true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, true, "flag-of-Monaco");
             Add("Mongolia", "", true, false, true, false, true, false, false, false, false, true, true, false, false, false, false, false, true, false, "flag-of-Mongolia");
             Add("Montenegro", "", true, false, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, "flag-of-Montenegro");
             Add("Morocco", "", true, false, false, true, false, false, false, false, false, false, true, true, false, false, false, false, false, false, "flag-of-Morocco");
@@ -171,7 +171,7 @@ namespace FlagFinder.Models
             Add("Sierra Leone", "", false, false, false, true, true, false, false, true, false, false, false, false, false, false, false, true, false, false, "flag-of-Sierra-Leone");
             Add("Singapore", "", true, false, false, false, false, false, false, true, false, false, false, true, false, true, false, false, false, false, "flag-of-Singapore");
             Add("Slovakia", "", true, false, false, false, true, false, false, true, false, false, false, false, false, false, true, true, false, false, "flag-of-Slovakia");
-            Add("Slovenia", "", true, false, false, false, true, false, false, true, false, false, false, true, false, false, false, true, false, false, "flag-of-Slovenia");
+            Add("Slovenia", "", true, false, true, false, true, false, false, true, false, false, false, true, false, false, false, true, false, false, "flag-of-Slovenia");
             Add("Solomon Islands", "", false, false, true, true, true, false, false, true, false, false, true, true, false, false, false, false, false, false, "flag-of-Solomon-Islands");
             Add("Somalia", "", false, false, false, false, true, false, false, true, false, false, false, true, false, false, false, false, false, false, "flag-of-Somalia");
             Add("South Africa", "", true, false, true, true, true, false, false, true, true, false, true, false, false, false, false, false, false, false, "flag-of-South-Africa");
