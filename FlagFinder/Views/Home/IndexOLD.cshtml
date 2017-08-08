@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Flag Finder";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <table id="flagTable" class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Country <span id="counter" class="badge">@ViewBag.FlagCount</span></th>
+                    <th><button class="btn filter-color" value="red" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Red</button></th>
+                    <th><button class="btn filter-color" value="orange" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Orange</button></th>
+                    <th><button class="btn filter-color" value="yellow" onclick="clickColor(this)" style="color:black"><span class="glyphicon glyphicon-minus"></span> Yellow</button></th>
+                    <th><button class="btn filter-color" value="green" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Green</button></th>
+                    <th><button class="btn filter-color" value="blue" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Blue</button></th>
+                    <th><button class="btn filter-color" value="purple" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Purple</button></th>
+                    <th><button class="btn filter-color" value="brown" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Brown</button></th>
+                    <th><button class="btn filter-color" value="white" onclick="clickColor(this)" style="color:black; border: 1px solid grey"><span class="glyphicon glyphicon-minus"></span> White</button></th>
+                    <th><button class="btn filter-color" value="black" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Black</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var et in ViewBag.Flags)
+            {
+                    <tr class="flag-row">
+                        <td><img class="flag-image" src="@et.ImageLocation" /></td>
+                        <td>@et.Name</td>
+                        <td><input type="checkbox" class="red-check" checked="@et.Red" /></td>
+                        <td><input type="checkbox" class="orange-check" checked="@et.Orange" /></td>
+                        <td><input type="checkbox" class="yellow-check" checked="@et.Yellow" /></td>
+                        <td><input type="checkbox" class="green-check" checked="@et.Green" /></td>
+                        <td><input type="checkbox" class="blue-check" checked="@et.Blue" /></td>
+                        <td><input type="checkbox" class="purple-check" checked="@et.Purple" /></td>
+                        <td><input type="checkbox" class="brown-check" checked="@et.Brown" /></td>
+                        <td><input type="checkbox" class="white-check" checked="@et.White" /></td>
+                        <td><input type="checkbox" class="black-check" checked="@et.Black" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/Scripts/site.js"></script>

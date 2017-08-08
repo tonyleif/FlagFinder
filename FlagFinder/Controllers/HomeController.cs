@@ -14,8 +14,19 @@ namespace FlagFinder.Controllers
             var flags = new Flags();
             flags.LoadFlags();
             ViewBag.Flags = flags;
+            ViewBag.FlagCount = flags.Count;
             return View();
         }
+
+        public ActionResult FlagFilter()
+        {
+            var flags = new Flags();
+            flags.LoadFlags();
+            ViewBag.Flags = flags;
+            ViewBag.FlagCount = flags.Count;
+            return View();
+        }
+
 
         public ActionResult About()
         {

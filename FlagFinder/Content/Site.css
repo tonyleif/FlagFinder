@@ -23,9 +23,18 @@ textarea {
     max-width: 280px;
 }
 
+.button-row {
+    padding-bottom: 10px;
+}
+
+.flag-label {
+    background-color: #646B7C;
+}
+
 .filter-color {
     color: white;
-    opacity: .6;
+    opacity: .4;
+    padding: 4px 6px;
 }
 
     .filter-color:hover {
@@ -36,9 +45,15 @@ textarea {
         color: white;
     }
 
+button.filter-shape {
+    opacity: 1;
+    color: white;
+    background-color: #A5A8AF;
+    padding: 4px 6px;
+}
 
 .in-limbeau {
-    opacity: .6;
+    opacity: .4;
     /*color: white !important;*/
 }
 /*.in-limbeau span {
@@ -49,16 +64,81 @@ textarea {
     opacity: 1;
 }
 
-    /*.selected span {
+button.selected-shape {
+    opacity: 1;
+    background: green;
+    color: white !important;
+}
+
+.not-selected-shape {
+    opacity: 1;
+    background: #474e5d !important;
+    color: white !important;
+    text-decoration: line-through !important;
+}
+
+/*.selected span {
         color: green !important;
     }*/
 
 .not-selected {
     opacity: 1;
-    background-color: gray !important;
+    background-color: #474e5d !important;
     color: white !important;
+    text-decoration: line-through !important;
 }
 
-    /*.not-selected span {
+/*.not-selected span {
         color: red !important;
     }*/
+
+.flag-tile {
+    display: inline-block;
+    padding: 5px;
+    transition: .3s;
+    /*transition-delay: .5s;*/
+}
+
+    .flag-tile:hover {
+        /*animation-delay: .5s;*/
+        transition-delay: .5s;
+        transform: scale(2);
+    }
+
+.flag-label {
+    display: inline-block;
+    width: 120px;
+}
+
+/*.flag-label:hover {
+        transform: scale(1.5);
+    }*/
+
+.flag-image {
+    height: 70px;
+    width: 120px;
+}
+
+    .flag-image img {
+        /*-webkit-transition: all 1s ease;*/ /* Safari and Chrome */
+        /*-moz-transition: all 1s ease;*/ /* Firefox */
+        /*-o-transition: all 1s ease;*/ /* IE 9 */
+        transition: all 1s ease;
+    }
+
+    .flag-image:hover {
+        /*-webkit-transform: scale(1.25);*/ /* Safari and Chrome */
+        /*-moz-transform: scale(1.25);*/ /* Firefox */
+        /*-o-transform: scale(1.25);*/ /* Opera */
+        /*transform: scale(1.5);*/
+    }
+
+#flagTable > thead > tr > th:nth-child(1),
+#flagTable > tbody > tr > td:nth-child(1) {
+    width: 100px !important;
+}
+
+#flagTable > thead > tr > th:nth-child(2),
+#flagTable > tbody > tr > td:nth-child(2) {
+    width: 200px !important;
+}

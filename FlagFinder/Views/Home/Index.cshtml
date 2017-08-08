@@ -2,93 +2,129 @@
     ViewBag.Title = "Flag Finder";
 }
 
-<div class="jumbotron">
-    <h1>@ViewBag.Title</h1>
-</div>
+<h1 style="display:inline-block; ">@ViewBag.Title <span style="vertical-align: middle;" id="counter" class="badge">@ViewBag.FlagCount</span></h1>
 
+<div class="row button-row">
+    <div class="col-md-12 text-center">
+        <button class="btn filter-color" value="red" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Red</button>
+        <button class="btn filter-color" value="orange" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Orange</button>
+        <button class="btn filter-color" value="yellow" onclick="clickColor(this)" style="color:black"><span class="glyphicon glyphicon-minus"></span> Yellow</button>
+        <button class="btn filter-color" value="green" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Green</button>
+        <button class="btn filter-color" value="blue" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Blue</button>
+        <button class="btn filter-color" value="purple" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Purple</button>
+        <button class="btn filter-color" value="brown" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Brown</button>
+        <button class="btn filter-color" value="white" onclick="clickColor(this)" style="color:black; border: 1px solid grey"><span class="glyphicon glyphicon-minus"></span> White</button>
+        <button class="btn filter-color" value="black" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Black</button>
+    </div>
+</div>
+<div class="row button-row">
+    <div class="col-md-12 text-center">
+        <button class="btn filter-shape" value="circle" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Circle</button>
+        <button class="btn filter-shape" value="triangle" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Triangle</button>
+        <button class="btn filter-shape" value="star" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Star</button>
+        <button class="btn filter-shape" value="sun" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Sun</button>
+        <button class="btn filter-shape" value="moon" onclick="clickColor(this)" ><span class="glyphicon glyphicon-minus"></span> Moon</button>
+        <button class="btn filter-shape" value="cross" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Cross</button>        
+        <button class="btn filter-shape" value="tri-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorHorizontal.png" /> </button>   
+        <button class="btn filter-shape" value="tri-color-vert" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorVertical.png" /> </button>   
+        <button class="btn filter-shape" value="bi-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/BiColorHorizontal.png" /> </button>   
+    </div>
+</div>
 <div class="row">
-    <div class="col-md-12">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th><button class="btn filter-color" value="red" onclick="clickColor(this)" ><span class="glyphicon glyphicon-minus"></span> Red</button></th>
-                    <th><button class="btn filter-color" value="orange" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Orange</button></th>
-                    <th><button class="btn filter-color" value="yellow" onclick="clickColor(this)" style="color:black"><span class="glyphicon glyphicon-minus"></span> Yellow</button></th>
-                    <th><button class="btn filter-color" value="green" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Green</button></th>
-                    <th><button class="btn filter-color" value="blue" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Blue</button></th>
-                    <th><button class="btn filter-color" value="purple" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Purple</button></th>
-                    <th><button class="btn filter-color" value="brown" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Brown</button></th>
-                    <th><button class="btn filter-color" value="white" onclick="clickColor(this)" style="color:black; border: 1px solid grey"><span class="glyphicon glyphicon-minus"></span> White</button></th>
-                    <th><button class="btn filter-color" value="black" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Black</button></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var et in ViewBag.Flags)
+    <div class="col-md-12 text-center">
+        @foreach (var f in ViewBag.Flags)
+        {
+            string CachedDataAnnotationsMetadataAttributes = "";
+            if (f.Red)
             {
-                    <tr>
-                        <td>@et.Name</td>
-                        <td><input type="checkbox" checked="@et.Red" /></td>
-                        <td><input type="checkbox" checked="@et.Orange" /></td>
-                        <td><input type="checkbox" checked="@et.Yellow" /></td>
-                        <td><input type="checkbox" checked="@et.Green" /></td>
-                        <td><input type="checkbox" checked="@et.Blue" /></td>
-                        <td><input type="checkbox" checked="@et.Purple" /></td>
-                        <td><input type="checkbox" checked="@et.Brown" /></td>
-                        <td><input type="checkbox" checked="@et.White" /></td>
-                        <td><input type="checkbox" checked="@et.Black" /></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+                CachedDataAnnotationsMetadataAttributes += " data-red";
+            }
+            if (f.Orange)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-orange";
+            }
+            if (f.Yellow)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-yellow";
+            }
+            if (f.Green)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-green";
+            }
+            if (f.Blue)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-blue";
+            }
+            if (f.Purple)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-purple";
+            }
+            if (f.Brown)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-brown";
+            }
+            if (f.White)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-white";
+            }
+            if (f.Black)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-black";
+            }
+            if (f.Circle)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-circle";
+            }
+            if (f.Triangle)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-triangle";
+            }
+            if (f.Star)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-star";
+            }
+            if (f.Sun)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-sun";
+            }
+            if (f.Moon)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-moon";
+            }
+            if (f.Cross)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-cross";
+            }
+            if (f.Cross)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-cross";
+            }
+            if (f.TriColorHorizontal)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-tri-color-horz";
+            }
+            if (f.TriColorVertical)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-tri-color-vert";
+            }
+            if (f.BiColorHorizontal)
+            {
+                CachedDataAnnotationsMetadataAttributes += " data-bi-color-horz";
+            }
+            <div class="flag-tile" @CachedDataAnnotationsMetadataAttributes>
+                <label class="label label-default flag-label">
+                    @if (f.ShortName != "")
+                    {
+                        @f.ShortName
+                    }
+                    else
+                    {
+                        @f.Name
+                    }
+                </label><br /><img class="flag-image" src="@f.ImageLocation" />
+            </div>
+        }
     </div>
 </div>
 
-<script>
-    function clickColor(sender) {
-        //alert("clickColor");
-        var clickedButton = $(sender);
-        var glyphSpan = clickedButton.children();
-        if (glyphSpan.hasClass("glyphicon-minus")) {
-            //selected
-            clickedButton.removeClass("in-limbeau");
-            glyphSpan.removeClass("glyphicon-minus");
-            glyphSpan.addClass("glyphicon-ok");
-            clickedButton.css("background-color", clickedButton.val());
-            clickedButton.addClass("selected");
-        } else if (glyphSpan.hasClass("glyphicon-ok")) {
-            //not selected
-            clickedButton.removeClass("selected");
-            glyphSpan.removeClass("glyphicon-ok");
-            glyphSpan.addClass("glyphicon-remove");
-            //clickedButton.css("opacity", 1);
-            clickedButton.addClass("not-selected");
-        } else if (glyphSpan.hasClass("glyphicon-remove")) {
-            //in limbeau
-            clickedButton.removeClass("not-selected");
-            glyphSpan.removeClass("glyphicon-remove");
-            //glyphSpan.addClass("glyphicon-minus");
-            ////clickedButton.css("opacity", .6);
-            //clickedButton.css("background-color", clickedButton.val());
-            //clickedButton.addClass("in-limbeau");
-            glyphSpan.addClass("glyphicon-ok");
-            clickedButton.css("background-color", clickedButton.val());
-            clickedButton.addClass("selected");
-        }
-    }
-
-    $(function () {
-        //var redButton = $("#redButton");
-        //redButton.css("background-color", redButton.val());
-        //$("#redButton").css("background-color", $("#" + this.id).val());
-        //$(".filter-color").css("background-color", this.value);
-        
-        $(".filter-color").each(function () {
-            //alert(this.id);
-            //alert(this.value);
-            //alert($(this.id).css());   
-            $(this).css("background-color", $(this).val())
-        });
-
-    });
-</script>
+<script src="~/Scripts/site.js"></script>
