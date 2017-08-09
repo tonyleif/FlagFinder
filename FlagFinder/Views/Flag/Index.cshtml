@@ -1,0 +1,187 @@
+﻿@model FlagFinder.Models.Flag
+
+@{
+    ViewBag.Title = "Flag";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@(Model.ImageLocation)</h2>
+
+<div>
+    @*<h4>Flag</h4>
+    <hr />*@
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>*@
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Red)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Red)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Orange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Orange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yellow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yellow)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Green)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Green)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Purple)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purple)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brown)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brown)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.White)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.White)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Black)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Black)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Circle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Circle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Triangle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Triangle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Star)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Star)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sun)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sun)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Moon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Moon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cross)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cross)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TriColorHorizontal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TriColorHorizontal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TriColorVertical)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TriColorVertical)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BiColorHorizontal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BiColorHorizontal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

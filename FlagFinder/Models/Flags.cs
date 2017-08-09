@@ -12,6 +12,18 @@ namespace FlagFinder.Models
         {
         }
 
+        public List<Flag> FlagList()
+        {
+            List<Flag> flags = new List<Flag>();
+            var flagColl = new Flags();
+            flagColl.LoadFlags();
+            foreach(Flag f in flagColl)
+            {
+                flags.Add(f);
+            }
+            return flags;
+        }
+
         public void LoadFlags()
         {
             Add("Afghanistan", "", true, false, false, true, false, false, false, true, true, false, false, false, false, false, false, false, true, false, "flag-of-Afghanistan");
@@ -23,7 +35,7 @@ namespace FlagFinder.Models
             Add("Argentina", "", false, true, false, false, true, false, false, true, false, true, false, false, true, false, false, true, false, false, "flag-of-Argentina");
             Add("Armenia", "", true, true, false, false, true, false, false, false, false, false, false, false, false, false, false, true, false, false, "flag-of-Armenia");
             Add("Australia", "", true, false, false, false, true, false, false, true, false, false, true, true, false, false, true, false, false, false, "flag-of-Australia");
-            Add("Austria", "", true, false, false, false, false, false, false, true, false, false, false, false, false, false, true, true, false, false, "flag-of-Austria");
+            Add("Austria", "", true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, "flag-of-Austria");
             Add("Azerbaijan", "", true, false, false, true, true, false, false, true, false, false, false, true, false, true, false, true, false, false, "flag-of-Azerbaijan");
             Add("Bahamas", "", false, false, true, false, true, false, false, false, true, false, true, false, false, false, false, true, false, false, "flag-of-Bahamas");
             Add("Bahrain", "", true, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, "flag-of-Bahrain");
@@ -211,7 +223,6 @@ namespace FlagFinder.Models
             Add("Yemen", "", true, false, false, false, false, false, false, true, true, false, false, false, false, false, false, true, false, false, "flag-of-Yemen");
             Add("Zambia", "", true, true, false, true, false, false, false, false, true, false, false, false, false, false, false, false, false, false, "flag-of-Zambia");
             Add("Zimbabwe", "", true, false, true, true, false, false, false, true, true, false, true, true, false, false, false, false, false, false, "flag-of-Zimbabwe");
-
         }
 
         void Add(string name, string shortName, bool red, bool orange, bool yellow, bool green, bool blue, bool purple, bool brown, bool white, bool black,

@@ -1,0 +1,209 @@
+﻿@model FlagFinder.Models.Flag
+
+@{
+    string header = Model.Name;
+    if (Model.ShortName != "")
+    {
+        header += " (" + Model.ShortName + ")";
+    }
+    ViewBag.Title = "Flag - " + Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<input id="countryName" type="hidden" value="@Model.Name" />*@
+<h2>@header</h2>
+<hr />
+<div class="row">
+    <div class="col-sm-3">
+        <img src="@Model.ImageLocation" class="img-responsive" /><br />
+        <br />
+        @Html.ActionLink("Back", "Index")
+        @*<a class="btn btn-default" href="/">Back</a>*@
+    </div>
+    <div class="col-sm-2">
+        <h4>Colors</h4>
+        <dl class="flag-attr dl-horizontal">
+            <dt>Red</dt>
+            <dd>
+                @Html.DisplayFor(model => model.Red)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Orange)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Orange)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Yellow)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Yellow)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Green)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Green)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Blue)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Blue)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Purple)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Purple)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Brown)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Brown)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.White)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.White)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Black)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Black)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-sm-2">
+        <h4>Shapes</h4>
+        <dl class="flag-attr dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Circle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Circle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Triangle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Triangle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Star)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Star)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sun)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sun)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Moon)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Moon)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cross)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cross)
+            </dd>
+
+            <dt>
+                <img src="~/Content/Images/TriColorHorizontal.png" />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TriColorHorizontal)
+            </dd>
+
+            <dt>
+                <img src="~/Content/Images/TriColorVertical.png" />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TriColorVertical)
+            </dd>
+
+            <dt>
+                <img src="~/Content/Images/BiColorHorizontal.png" />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BiColorHorizontal)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-sm-5 text-center" style="align-content: center">
+        <div id="map" style="width:100%;height:240px;">
+            @*<a class="btn btn-default" href="/">Home</a>*@
+        </div>
+    </div>
+</div>
+
+<script>
+
+        function myMap() {
+            //var mapOptions = {
+            //    center: new google.maps.LatLng(51.5, -0.12),
+            //    zoom: 3,
+            //    mapTypeId: google.maps.MapTypeId.HYBRID
+            //}
+            var mapOptions = {
+                zoom: 3
+            }
+
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            var address = "country @Model.Name"; //document.getElementById('address').value;
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtKuxHmT5JXBE284JE9S_SzMqQvtWKwiE&callback=myMap"></script>
+

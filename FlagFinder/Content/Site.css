@@ -14,6 +14,20 @@
 */
 .dl-horizontal dt {
     white-space: normal;
+    width: 100%;
+    text-align: left;
+}
+
+dl.flag-attr{
+    width: 120px;
+}
+
+.flag-attr > dt {
+    width: 5em;
+}
+
+.flag-attr > dd {
+    margin-left: 5em;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -27,6 +41,11 @@ textarea {
     padding-bottom: 10px;
 }
 
+hr.filter-hr {
+    margin-bottom: 4px;
+    margin-top: 10px;
+}
+
 .flag-label {
     background-color: #646B7C;
 }
@@ -34,7 +53,7 @@ textarea {
 .filter-color {
     color: white;
     opacity: .4;
-    padding: 4px 6px;
+    padding: 4px 10px;
 }
 
     .filter-color:hover {
@@ -49,7 +68,7 @@ button.filter-shape {
     opacity: 1;
     color: white;
     background-color: #A5A8AF;
-    padding: 4px 6px;
+    padding: 4px 10px;
 }
 
 .in-limbeau {

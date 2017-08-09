@@ -1,11 +1,40 @@
-﻿
-var redIsSelected = "";
-var orangeIsSelected = "";
+﻿function reset() {
+    //reset color buttons
+    var colorButtons = $(".filter-color");
+    colorButtons.each((function (i) {
+        var colorButton = $(this);
+        setButtonInLimbeau(colorButton);
+    }));
+    //reset shape buttons
+    var shapeButtons = $(".filter-shape");
+    shapeButtons.each((function (i) {
+        var shapeButton = $(this);
+        setButtonInLimbeau(shapeButton);
+    }));
+    filterFlags();
+}
+
+function setButtonInLimbeau(button) {
+    if (button.hasClass("filter-color")) {
+        button.removeClass("selected");
+        button.removeClass("not-selected");
+    } else if (button.hasClass("filter-shape")) {
+        button.removeClass("selected-shape");
+        button.removeClass("not-selected-shape");
+    }
+    button.addClass("in-limbeau");
+    var glyphSpan = button.children();
+    glyphSpan.removeClass("glyphicon-ok");
+    glyphSpan.removeClass("glyphicon-remove");
+    glyphSpan.addClass("glyphicon-minus");
+}
 
 function clickColor(sender) {
-    //console.log("clickColor(sender)");
     changeButton(sender);
-    //console.log("after changeButton(sender)");
+    filterFlags();
+}
+
+function filterFlags() {
     var colorButtons = $(".filter-color");
     var filterStatuses = [];
     colorButtons.each((function (i) {
@@ -17,7 +46,6 @@ function clickColor(sender) {
         } else if (colorButton.hasClass("not-selected")) {
             status = "no";
         }
-        //console.log("pushing " + color + " | " + status);
         filterStatuses.push({ Filter: color, Status: status });
     }));
 
@@ -33,8 +61,6 @@ function clickColor(sender) {
         }
         filterStatuses.push({ Filter: shape, Status: status });
     }));
-
-    console.log("out of loop");
 
     var flagRows = $(".flag-tile"); //.flag-row
     var flagCount = 0;
@@ -57,12 +83,8 @@ function clickColor(sender) {
         });
     })
 
-    //console.log("counter: " + $("#counter").text());
-    //console.log("flagCount: " + flagCount);
     $("#counter").text(flagCount);
 }
-
-
 
 function changeButton(sender) {
     var clickedButton = $(sender);

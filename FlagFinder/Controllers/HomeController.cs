@@ -18,12 +18,23 @@ namespace FlagFinder.Controllers
             return View();
         }
 
-        public ActionResult FlagFilter()
+        public ActionResult Flag(string id)
         {
-            var flags = new Flags();
-            flags.LoadFlags();
-            ViewBag.Flags = flags;
-            ViewBag.FlagCount = flags.Count;
+            if(String.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index");
+            }
+            var flagColl = new Flags();
+            flagColl.LoadFlags();
+            var flags = flagColl.FlagList();
+            var flag = flags.Where(f => f.Name.ToLower() == id.ToLower()).First();
+            return View(flag);
+        }
+
+        public ActionResult Test()
+        {
+            ViewBag.Message = "Your application description page.";
+
             return View();
         }
 

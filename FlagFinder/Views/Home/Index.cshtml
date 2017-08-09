@@ -2,10 +2,13 @@
     ViewBag.Title = "Flag Finder";
 }
 
-<h1 style="display:inline-block; ">@ViewBag.Title <span style="vertical-align: middle;" id="counter" class="badge">@ViewBag.FlagCount</span></h1>
+<h1 style="display:inline-block; ">@ViewBag.Title <span style="vertical-align: middle;" id="counter" class="badge">@ViewBag.FlagCount</span> <button class="btn btn-default" onclick="reset()">Reset</button></h1>
 
-<div class="row button-row">
-    <div class="col-md-12 text-center">
+<div class="row button-row" style="vertical-align:middle">
+    <div class="col-md-1">
+        <h5 style="display:inline-block">Colors </h5>
+    </div>
+    <div class="col-md-11">
         <button class="btn filter-color" value="red" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Red</button>
         <button class="btn filter-color" value="orange" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Orange</button>
         <button class="btn filter-color" value="yellow" onclick="clickColor(this)" style="color:black"><span class="glyphicon glyphicon-minus"></span> Yellow</button>
@@ -17,19 +20,23 @@
         <button class="btn filter-color" value="black" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Black</button>
     </div>
 </div>
-<div class="row button-row">
-    <div class="col-md-12 text-center">
+<div class="row">
+    <div class="col-md-1">
+        <h5 style="display:inline-block">Shapes </h5>
+    </div>
+    <div class="col-md-11">
         <button class="btn filter-shape" value="circle" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Circle</button>
         <button class="btn filter-shape" value="triangle" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Triangle</button>
         <button class="btn filter-shape" value="star" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Star</button>
         <button class="btn filter-shape" value="sun" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Sun</button>
-        <button class="btn filter-shape" value="moon" onclick="clickColor(this)" ><span class="glyphicon glyphicon-minus"></span> Moon</button>
-        <button class="btn filter-shape" value="cross" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Cross</button>        
-        <button class="btn filter-shape" value="tri-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorHorizontal.png" /> </button>   
-        <button class="btn filter-shape" value="tri-color-vert" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorVertical.png" /> </button>   
-        <button class="btn filter-shape" value="bi-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/BiColorHorizontal.png" /> </button>   
+        <button class="btn filter-shape" value="moon" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Moon</button>
+        <button class="btn filter-shape" value="cross" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Cross</button>
+        <button class="btn filter-shape" value="tri-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorHorizontal.png" /> </button>
+        <button class="btn filter-shape" value="tri-color-vert" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorVertical.png" /> </button>
+        <button class="btn filter-shape" value="bi-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/BiColorHorizontal.png" /> </button>
     </div>
 </div>
+<hr class="filter-hr" />
 <div class="row">
     <div class="col-md-12 text-center">
         @foreach (var f in ViewBag.Flags)
@@ -111,6 +118,12 @@
             {
                 CachedDataAnnotationsMetadataAttributes += " data-bi-color-horz";
             }
+            string link = f.Name;
+            if (link.Contains(" "))
+            {
+                link = link.Replace(" ", "%20");
+            }
+
             <div class="flag-tile" @CachedDataAnnotationsMetadataAttributes>
                 <label class="label label-default flag-label">
                     @if (f.ShortName != "")
@@ -121,10 +134,12 @@
                     {
                         @f.Name
                     }
-                </label><br /><img class="flag-image" src="@f.ImageLocation" />
+                </label><br />
+                <a href="/Home/Flag/@link"><img class="flag-image" src="@f.ImageLocation" /></a>
             </div>
         }
     </div>
 </div>
+<br />
 
 <script src="~/Scripts/site.js"></script>
