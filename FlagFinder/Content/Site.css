@@ -189,8 +189,12 @@ label.label-chkbox {
     padding: 2px 4px;
 }
 
-@media (min-width: 768px) {
-    label.check-lbl {
+    label.label-chkbox:hover{
+        background-color: white;
+    }
+    
+    @media (min-width: 768px) {
+        label .check-lbl {
         width: 4em;
         padding: 4px;
     }
