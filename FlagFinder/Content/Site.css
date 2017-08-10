@@ -161,3 +161,69 @@ button.selected-shape {
 #flagTable > tbody > tr > td:nth-child(2) {
     width: 200px !important;
 }
+
+.social-icon{
+    height: 30px;
+    width: 30px;
+}
+
+.social-list {
+    padding-left: 0px;
+}
+
+.social-list > li {
+    font-size: 1.1em;
+    list-style-type: none;
+    padding: 3px;
+}
+
+label.check-lbl {
+    width: 60px;
+    background-color: #828793;
+    color: white;
+    display: inline;
+    padding: 2px 6px;
+}
+
+label.label-chkbox {
+    padding: 2px 4px;
+}
+
+@media (min-width: 768px) {
+    label.check-lbl {
+        width: 4em;
+        padding: 4px;
+    }
+
+    label.label-chkbox {
+        padding: 4px 6px;
+    }
+}
+
+@media (min-width: 992px) {
+    label.check-lbl {
+        width: 6em;
+        padding: 4px;
+    }
+
+    label.label-chkbox {
+        padding: 4px 6px;
+    }
+}
+
+@media (min-width: 1200px) {
+    label.check-lbl {
+        width: 8em;
+        padding: 6px 12px;
+    }
+
+    label.label-chkbox {
+        padding: 6px 12px;
+    }
+}
+
+#map {
+    border-radius: 8px;
+    border-style: solid;
+    border-width: thin;
+}

@@ -1,12 +1,87 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
+﻿@*@{
+        ViewBag.Title = "Contact";
+    }
+    <h2>@ViewBag.Title</h2>*@
 
-<address>
-    Tony Leif<br />
-    Boston University<br />
-    MET CS 651 Web Development with .NET<br />
-    <a href="tony.leif@gmail.com">tony.leif@gmail.com</a>
-</address>
+
+<div class="row">
+    <div class="col-sm-6">
+        <h3>Contact</h3>
+        <address>
+            Tony Leif<br />
+            <a href="mailto:tony.leif@gmail.com">tony.leif@gmail.com</a>
+        </address>
+        <h3>Course</h3>
+        Boston University<br />
+        MET CS 651 Web Development with .NET<br />
+        <br />
+        <a href="http://www.bu.edu" target="_blank">
+            <img src="~/Content/Images/Icons/bulogo.png" />
+        </a>
+    </div>
+    <div class="col-sm-6">
+        <h3>Find me online</h3>
+        <ul class="social-list">
+            <!-- Heights as widths were set for the icons per best practice. The icons are the favicon.ico files from each site.
+             I needed to resize the StackOverflow and Google+ icon in image editing software per best practice as they were
+             too large. -->
+            <li>
+                <a href="http://stackoverflow.com/users/3347858/tony-l" target="_blank">
+                    <!-- I switched back to the original icon because my new one didn't have a transparent background -->
+                    <img src="~/Content/Images/Icons/stackoverflow.png" alt="StackOverflow icon" class="social-icon">
+                    StackOverflow
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/tonyleif" target="_blank">
+                    <!-- I switched back to the original icon because my new one didn't have a transparent background -->
+                    <img src="~/Content/Images/Icons/github.png" alt="GitHub icon" class="social-icon">
+                    GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/tonyleif" target="_blank">
+                    <img src="~/Content/Images/Icons/linkedin.png" alt="LinkedIn icon" class="social-icon">
+                    LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/tony.leif" target="_blank">
+                    <img src="~/Content/Images/Icons/facebook.png" alt="Facebook icon" class="social-icon">
+                    Facebook
+                </a>
+            </li>
+            <li>
+                <a href="https://plus.google.com/u/0/117039834557708105106/posts" target="_blank">
+                    <img src="~/Content/Images/Icons/googleplus.png" alt="Google plus icon" class="social-icon">
+                    Google+
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/tony_leif" target="_blank">
+                    <img src="~/Content/Images/Icons/twitter.png" alt="Twitter icon" class="social-icon">
+                    Twitter
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UC5x63YG9gSSZI6QHOXfUqKg" target="_blank">
+                    <img src="~/Content/Images/Icons/youtube.png" alt="YouTube icon" class="social-icon">
+                    YouTube
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+@*<img src="~/Content/Images/Icons/stackoverflow.png" />
+    <img src="~/Content/Images/Icons/github.png" />
+    <img src="~/Content/Images/Icons/linkedin.png" />
+    <img src="~/Content/Images/Icons/youtube.jpg" />
+    <img src="~/Content/Images/Icons/facebook.png" />
+    <img src="~/Content/Images/Icons/twitter.png" />
+    <img src="~/Content/Images/Icons/googleplus.png" />*@

@@ -25,15 +25,33 @@
         <h5 style="display:inline-block">Shapes </h5>
     </div>
     <div class="col-md-11">
-        <button class="btn filter-shape" value="circle" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Circle</button>
-        <button class="btn filter-shape" value="triangle" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Triangle</button>
-        <button class="btn filter-shape" value="star" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Star</button>
-        <button class="btn filter-shape" value="sun" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Sun</button>
-        <button class="btn filter-shape" value="moon" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Moon</button>
-        <button class="btn filter-shape" value="cross" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> Cross</button>
-        <button class="btn filter-shape" value="tri-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorHorizontal.png" /> </button>
-        <button class="btn filter-shape" value="tri-color-vert" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorVertical.png" /> </button>
-        <button class="btn filter-shape" value="bi-color-horz" onclick="clickColor(this)"><span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/BiColorHorizontal.png" /> </button>
+        <button class="btn filter-shape" value="circle" onclick="clickColor(this)" title="Flag has an obvious defined circle.">
+            <span class="glyphicon glyphicon-minus"></span> Circle
+        </button>
+        <button class="btn filter-shape" value="triangle" onclick="clickColor(this)" title="A triangle appears anywhere on the flag. Some of the triangles are not obvious.">
+            <span class="glyphicon glyphicon-minus"></span> Triangle
+        </button>
+        <button class="btn filter-shape" value="star" onclick="clickColor(this)" title="Stars are not limited to the five point star common on many flags.">
+            <span class="glyphicon glyphicon-minus"></span> Star
+        </button>
+        <button class="btn filter-shape" value="sun" onclick="clickColor(this)">
+            <span class="glyphicon glyphicon-minus"></span> Sun
+        </button>
+        <button class="btn filter-shape" value="moon" onclick="clickColor(this)" title="Flag has a crescent moon.">
+            <span class="glyphicon glyphicon-minus"></span> Moon
+        </button>
+        <button class="btn filter-shape" value="cross" onclick="clickColor(this)" title="Flag has a horizonal line and a vertical line that overlap each other.">
+            <span class="glyphicon glyphicon-minus"></span> Cross
+        </button>
+        <button class="btn filter-shape" value="tri-color-horz" onclick="clickColor(this)" title="Flag has 3 broad horizontal stripes with no colors in between.">
+            <span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorHorizontal.png" />
+        </button>
+        <button class="btn filter-shape" value="tri-color-vert" onclick="clickColor(this)" title="Flag has 3 broad vertical stripes with no colors in between.">
+            <span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/TriColorVertical.png" />
+        </button>
+        <button class="btn filter-shape" value="bi-color-horz" onclick="clickColor(this)" title="Flag has 2 broad horizontal stripes with no colors in between.">
+            <span class="glyphicon glyphicon-minus"></span> <img src="~/Content/Images/BiColorHorizontal.png" />
+        </button>
     </div>
 </div>
 <hr class="filter-hr" />
